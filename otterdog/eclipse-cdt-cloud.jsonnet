@@ -122,6 +122,14 @@ orgs.newOrg('eclipse-cdt-cloud') {
         "tsp"
       ],
       web_commit_signoff_required: false,
+      webhooks: [
+        orgs.newRepoWebhook('https://discordapp.com/api/webhooks/732801241565888642/k8i2zzlYPFJjgMBKXM-zm4gMPdpWQln3RDvJ6jcUugNUbgRZyOVXEe0FTVCPFQeSjAGW/github') {
+          content_type: "json",
+          events+: [
+            "push"
+          ],
+        },
+      ],
       branch_protection_rules: [
         orgs.newBranchProtectionRule('master') {
           dismisses_stale_reviews: true,
@@ -139,6 +147,20 @@ orgs.newOrg('eclipse-cdt-cloud') {
       secret_scanning: "disabled",
       secret_scanning_push_protection: "disabled",
       web_commit_signoff_required: false,
+      webhooks: [
+        orgs.newRepoWebhook('https://notify.travis-ci.org') {
+          events+: [
+            "create",
+            "delete",
+            "issue_comment",
+            "member",
+            "public",
+            "pull_request",
+            "push",
+            "repository"
+          ],
+        },
+      ],
       branch_protection_rules: [
         orgs.newBranchProtectionRule('master') {
           is_admin_enforced: true,
@@ -189,6 +211,20 @@ orgs.newOrg('eclipse-cdt-cloud') {
       secret_scanning: "disabled",
       secret_scanning_push_protection: "disabled",
       web_commit_signoff_required: false,
+      webhooks: [
+        orgs.newRepoWebhook('https://notify.travis-ci.org') {
+          events+: [
+            "create",
+            "delete",
+            "issue_comment",
+            "member",
+            "public",
+            "pull_request",
+            "push",
+            "repository"
+          ],
+        },
+      ],
       branch_protection_rules: [
         orgs.newBranchProtectionRule('master') {
           is_admin_enforced: true,
