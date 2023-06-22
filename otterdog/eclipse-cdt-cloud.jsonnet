@@ -186,6 +186,9 @@ orgs.newOrg('eclipse-cdt-cloud') {
           requires_strict_status_checks: true,
         },
       ],
+      environments: [
+        orgs.newEnvironment('github-pages'),
+      ],
     },
     orgs.newRepo('tsp-python-client') {
       allow_update_branch: false,
