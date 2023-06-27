@@ -8,7 +8,7 @@ orgs.newOrg('eclipse-cdt-cloud') {
     description: "",
     members_can_change_repo_visibility: true,
     members_can_delete_repositories: true,
-    name: "Eclipse CDT.cloud",
+    name: "Eclipse CDT Cloud",
     packages_containers_internal: false,
     packages_containers_public: false,
     readers_can_create_discussions: true,
