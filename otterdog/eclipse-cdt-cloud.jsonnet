@@ -17,7 +17,7 @@ orgs.newOrg('eclipse-cdt-cloud') {
   },
   secrets+: [
     orgs.newOrgSecret('OPEN_VSX_TOKEN') {
-      value: "********",
+      value: "pass:bots/ecd.cdt-cloud/open-vsx.org/token",
     },
     orgs.newOrgSecret('VS_MARKETPLACE_TOKEN') {
       value: "********",
@@ -116,7 +116,7 @@ orgs.newOrg('eclipse-cdt-cloud') {
       web_commit_signoff_required: false,
       secrets: [
         orgs.newRepoSecret('NPM_AUTH_TOKEN') {
-          value: "********",
+          value: "pass:bots/ecd.cdt-cloud/npmjs.com/token",
         },
       ],
     },
@@ -145,7 +145,7 @@ orgs.newOrg('eclipse-cdt-cloud') {
       ],
       secrets: [
         orgs.newRepoSecret('NPM_AUTH_TOKEN') {
-          value: "********",
+          value: "pass:bots/ecd.cdt-cloud/npmjs.com/token",
         },
       ],
       branch_protection_rules: [
@@ -181,7 +181,7 @@ orgs.newOrg('eclipse-cdt-cloud') {
       ],
       secrets: [
         orgs.newRepoSecret('NPM_AUTH_TOKEN') {
-          value: "********",
+          value: "pass:bots/ecd.cdt-cloud/npmjs.com/token",
         },
       ],
       branch_protection_rules: [
@@ -253,7 +253,7 @@ orgs.newOrg('eclipse-cdt-cloud') {
       ],
       secrets: [
         orgs.newRepoSecret('NPM_AUTH_TOKEN') {
-          value: "********",
+          value: "pass:bots/ecd.cdt-cloud/npmjs.com/token",
         },
       ],
       branch_protection_rules: [
