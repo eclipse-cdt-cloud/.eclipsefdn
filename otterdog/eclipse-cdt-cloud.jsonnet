@@ -15,6 +15,14 @@ orgs.newOrg('eclipse-cdt-cloud') {
     two_factor_requirement: false,
     web_commit_signoff_required: false,
   },
+  secrets+: [
+    orgs.newOrgSecret('OPEN_VSX_TOKEN') {
+      value: "********",
+    },
+    orgs.newOrgSecret('VS_MARKETPLACE_TOKEN') {
+      value: "********",
+    },
+  ],
   _repositories+:: [
     orgs.newRepo('cdt-amalgamator') {
       allow_update_branch: false,
@@ -106,6 +114,11 @@ orgs.newOrg('eclipse-cdt-cloud') {
         "vscode-extension"
       ],
       web_commit_signoff_required: false,
+      secrets: [
+        orgs.newRepoSecret('NPM_AUTH_TOKEN') {
+          value: "********",
+        },
+      ],
     },
     orgs.newRepo('theia-trace-extension') {
       allow_update_branch: false,
@@ -128,6 +141,11 @@ orgs.newOrg('eclipse-cdt-cloud') {
           events+: [
             "push"
           ],
+        },
+      ],
+      secrets: [
+        orgs.newRepoSecret('NPM_AUTH_TOKEN') {
+          value: "********",
         },
       ],
       branch_protection_rules: [
@@ -159,6 +177,11 @@ orgs.newOrg('eclipse-cdt-cloud') {
             "push",
             "repository"
           ],
+        },
+      ],
+      secrets: [
+        orgs.newRepoSecret('NPM_AUTH_TOKEN') {
+          value: "********",
         },
       ],
       branch_protection_rules: [
@@ -226,6 +249,11 @@ orgs.newOrg('eclipse-cdt-cloud') {
             "push",
             "repository"
           ],
+        },
+      ],
+      secrets: [
+        orgs.newRepoSecret('NPM_AUTH_TOKEN') {
+          value: "********",
         },
       ],
       branch_protection_rules: [
@@ -302,6 +330,11 @@ orgs.newOrg('eclipse-cdt-cloud') {
       secret_scanning: "disabled",
       secret_scanning_push_protection: "disabled",
       web_commit_signoff_required: false,
+      secrets: [
+        orgs.newRepoSecret('GH_ACTION_TOKEN') {
+          value: "********",
+        },
+      ],
     },
     orgs.newRepo('website-publish') {
       allow_update_branch: false,
