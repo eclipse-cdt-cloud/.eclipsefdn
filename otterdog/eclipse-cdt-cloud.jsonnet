@@ -332,7 +332,7 @@ orgs.newOrg('eclipse-cdt-cloud') {
       web_commit_signoff_required: false,
       secrets: [
         orgs.newRepoSecret('GH_ACTION_TOKEN') {
-          value: "********",
+          value: "pass:bots/ecd.cdt-cloud/github.com/api-token",
         },
       ],
     },
