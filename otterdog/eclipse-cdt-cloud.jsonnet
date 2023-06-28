@@ -20,7 +20,7 @@ orgs.newOrg('eclipse-cdt-cloud') {
       value: "pass:bots/ecd.cdt-cloud/open-vsx.org/token",
     },
     orgs.newOrgSecret('VS_MARKETPLACE_TOKEN') {
-      value: "********",
+      value: "pass:bots/ecd.cdt-cloud/marketplace.visualstudio.com/token",
     },
   ],
   _repositories+:: [
