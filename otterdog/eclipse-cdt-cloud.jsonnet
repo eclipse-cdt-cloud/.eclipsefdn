@@ -33,6 +33,7 @@ orgs.newOrg('eclipse-cdt-cloud') {
     orgs.newRepo('cdt-cloud') {
       allow_update_branch: false,
       description: "Components for web-based C/C++ tools",
+      has_discussions: true,
       homepage: "https://www.eclipse.org/cdt-cloud",
       secret_scanning: "disabled",
       secret_scanning_push_protection: "disabled",
@@ -276,6 +277,7 @@ orgs.newOrg('eclipse-cdt-cloud') {
       allow_update_branch: false,
       default_branch: "master",
       description: "Trace viewer extension for Theia applications and VSCode compatible applications",
+      has_discussions: true,
       homepage: "",
       secret_scanning: "disabled",
       secret_scanning_push_protection: "disabled",
