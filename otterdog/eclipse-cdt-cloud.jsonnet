@@ -61,6 +61,7 @@ orgs.newOrg('eclipse-cdt-cloud') {
     },
     orgs.newRepo('cdt-gdb-adapter') {
       allow_update_branch: false,
+      dependabot_security_updates_enabled: true,
       description: "CDT GDB Debug Adapter",
       homepage: "",
       secret_scanning: "disabled",
@@ -82,6 +83,7 @@ orgs.newOrg('eclipse-cdt-cloud') {
     },
     orgs.newRepo('cdt-gdb-vscode') {
       allow_update_branch: false,
+      dependabot_security_updates_enabled: true,
       description: "CDT GDB Visual Studio Code Extension",
       homepage: "",
       secret_scanning: "disabled",
@@ -124,6 +126,7 @@ orgs.newOrg('eclipse-cdt-cloud') {
     orgs.newRepo('theia-trace-extension') {
       allow_update_branch: false,
       default_branch: "master",
+      dependabot_security_updates_enabled: true,
       description: "Theia trace viewer extension using the tsp-typescript-client (https://github.com/theia-ide/tsp-typescript-client) and Trace Server Protocol (https://github.com/theia-ide/trace-server-protocol).",
       homepage: "",
       secret_scanning: "disabled",
@@ -162,6 +165,7 @@ orgs.newOrg('eclipse-cdt-cloud') {
     orgs.newRepo('timeline-chart') {
       allow_update_branch: false,
       default_branch: "master",
+      dependabot_security_updates_enabled: true,
       description: "A timeline / gantt chart library for large data (e.g. traces)",
       secret_scanning: "disabled",
       secret_scanning_push_protection: "disabled",
@@ -197,6 +201,7 @@ orgs.newOrg('eclipse-cdt-cloud') {
     orgs.newRepo('trace-server-protocol') {
       allow_update_branch: false,
       default_branch: "master",
+      dependabot_security_updates_enabled: true,
       description: "Specification of the Trace Server Protocol",
       homepage: "https://eclipse-cdt-cloud.github.io/trace-server-protocol/",
       secret_scanning: "disabled",
@@ -217,6 +222,7 @@ orgs.newOrg('eclipse-cdt-cloud') {
     orgs.newRepo('tsp-python-client') {
       allow_update_branch: false,
       default_branch: "master",
+      dependabot_security_updates_enabled: true,
       description: "Client-side implementation, in Python, of the Trace Server Protocol (TSP) (https://github.com/theia-ide/trace-server-protocol)",
       secret_scanning: "disabled",
       secret_scanning_push_protection: "disabled",
@@ -233,6 +239,7 @@ orgs.newOrg('eclipse-cdt-cloud') {
     orgs.newRepo('tsp-typescript-client') {
       allow_update_branch: false,
       default_branch: "master",
+      dependabot_security_updates_enabled: true,
       description: "Client-side implementation, in typescript, of the Trace Server Protocol (https://github.com/theia-ide/trace-server-protocol).",
       homepage: "",
       secret_scanning: "disabled",
@@ -276,6 +283,7 @@ orgs.newOrg('eclipse-cdt-cloud') {
     orgs.newRepo('vscode-trace-extension') {
       allow_update_branch: false,
       default_branch: "master",
+      dependabot_security_updates_enabled: true,
       description: "Trace viewer extension for Theia applications and VSCode compatible applications",
       has_discussions: true,
       homepage: "",
