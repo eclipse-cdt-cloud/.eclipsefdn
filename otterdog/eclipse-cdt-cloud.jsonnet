@@ -26,8 +26,6 @@ orgs.newOrg('eclipse-cdt-cloud') {
   _repositories+:: [
     orgs.newRepo('cdt-amalgamator') {
       allow_update_branch: false,
-      secret_scanning: "disabled",
-      secret_scanning_push_protection: "disabled",
       web_commit_signoff_required: false,
     },
     orgs.newRepo('cdt-cloud') {
@@ -35,8 +33,6 @@ orgs.newOrg('eclipse-cdt-cloud') {
       description: "Components for web-based C/C++ tools",
       has_discussions: true,
       homepage: "https://www.eclipse.org/cdt-cloud",
-      secret_scanning: "disabled",
-      secret_scanning_push_protection: "disabled",
       topics+: [
         "clangd",
         "cloud-ide",
@@ -55,8 +51,6 @@ orgs.newOrg('eclipse-cdt-cloud') {
       default_branch: "master",
       description: "CDT Cloud Blueprint is a template for building custom web-based C/C++ tools. It is made up of existing open source components and can be easily downloaded and installed on all major operating system platforms.",
       homepage: "",
-      secret_scanning: "disabled",
-      secret_scanning_push_protection: "disabled",
       web_commit_signoff_required: false,
     },
     orgs.newRepo('cdt-gdb-adapter') {
@@ -64,8 +58,6 @@ orgs.newOrg('eclipse-cdt-cloud') {
       dependabot_security_updates_enabled: true,
       description: "CDT GDB Debug Adapter",
       homepage: "",
-      secret_scanning: "disabled",
-      secret_scanning_push_protection: "disabled",
       topics+: [
         "cdt",
         "debug",
@@ -86,8 +78,6 @@ orgs.newOrg('eclipse-cdt-cloud') {
       dependabot_security_updates_enabled: true,
       description: "CDT GDB Visual Studio Code Extension",
       homepage: "",
-      secret_scanning: "disabled",
-      secret_scanning_push_protection: "disabled",
       topics+: [
         "cdt",
         "gdb",
@@ -108,8 +98,6 @@ orgs.newOrg('eclipse-cdt-cloud') {
       description: "API for management of clangd configuration files in C/C++ projects using contexts.",
       has_wiki: false,
       homepage: "",
-      secret_scanning: "disabled",
-      secret_scanning_push_protection: "disabled",
       topics+: [
         "clangd",
         "cpp",
@@ -129,8 +117,6 @@ orgs.newOrg('eclipse-cdt-cloud') {
       dependabot_security_updates_enabled: true,
       description: "Theia trace viewer extension using the tsp-typescript-client (https://github.com/theia-ide/tsp-typescript-client) and Trace Server Protocol (https://github.com/theia-ide/trace-server-protocol).",
       homepage: "",
-      secret_scanning: "disabled",
-      secret_scanning_push_protection: "disabled",
       topics+: [
         "theia-extension",
         "trace",
@@ -167,8 +153,6 @@ orgs.newOrg('eclipse-cdt-cloud') {
       default_branch: "master",
       dependabot_security_updates_enabled: true,
       description: "A timeline / gantt chart library for large data (e.g. traces)",
-      secret_scanning: "disabled",
-      secret_scanning_push_protection: "disabled",
       web_commit_signoff_required: false,
       webhooks: [
         orgs.newRepoWebhook('https://notify.travis-ci.org') {
@@ -207,8 +191,6 @@ orgs.newOrg('eclipse-cdt-cloud') {
       gh_pages_source_branch: "gh-pages",
       gh_pages_source_path: "/",
       homepage: "https://eclipse-cdt-cloud.github.io/trace-server-protocol/",
-      secret_scanning: "disabled",
-      secret_scanning_push_protection: "disabled",
       web_commit_signoff_required: false,
       branch_protection_rules: [
         orgs.newBranchProtectionRule('master') {
@@ -227,8 +209,6 @@ orgs.newOrg('eclipse-cdt-cloud') {
       default_branch: "master",
       dependabot_security_updates_enabled: true,
       description: "Client-side implementation, in Python, of the Trace Server Protocol (TSP) (https://github.com/theia-ide/trace-server-protocol)",
-      secret_scanning: "disabled",
-      secret_scanning_push_protection: "disabled",
       web_commit_signoff_required: false,
       branch_protection_rules: [
         orgs.newBranchProtectionRule('master') {
@@ -245,8 +225,6 @@ orgs.newOrg('eclipse-cdt-cloud') {
       dependabot_security_updates_enabled: true,
       description: "Client-side implementation, in typescript, of the Trace Server Protocol (https://github.com/theia-ide/trace-server-protocol).",
       homepage: "",
-      secret_scanning: "disabled",
-      secret_scanning_push_protection: "disabled",
       web_commit_signoff_required: false,
       webhooks: [
         orgs.newRepoWebhook('https://notify.travis-ci.org') {
@@ -279,8 +257,6 @@ orgs.newOrg('eclipse-cdt-cloud') {
     orgs.newRepo('vscode-memory-inspector') {
       allow_update_branch: false,
       description: "vscode memory inspector",
-      secret_scanning: "disabled",
-      secret_scanning_push_protection: "disabled",
       web_commit_signoff_required: false,
     },
     orgs.newRepo('vscode-trace-extension') {
@@ -290,8 +266,6 @@ orgs.newOrg('eclipse-cdt-cloud') {
       description: "Trace viewer extension for Theia applications and VSCode compatible applications",
       has_discussions: true,
       homepage: "",
-      secret_scanning: "disabled",
-      secret_scanning_push_protection: "disabled",
       topics+: [
         "theia",
         "trace",
@@ -316,8 +290,6 @@ orgs.newOrg('eclipse-cdt-cloud') {
       allow_update_branch: false,
       description: "Extension to start and stop a trace server used by the vscode-trace-extension. This extension can run in Theia and VSCode compatible applications",
       homepage: "",
-      secret_scanning: "disabled",
-      secret_scanning_push_protection: "disabled",
       topics+: [
         "theia",
         "trace",
@@ -334,14 +306,10 @@ orgs.newOrg('eclipse-cdt-cloud') {
       allow_update_branch: false,
       has_wiki: false,
       homepage: "https://open-vsx.org/extension/eclipse-cdt/websocket-adapter",
-      secret_scanning: "disabled",
-      secret_scanning_push_protection: "disabled",
       web_commit_signoff_required: false,
     },
     orgs.newRepo('website') {
       allow_update_branch: false,
-      secret_scanning: "disabled",
-      secret_scanning_push_protection: "disabled",
       web_commit_signoff_required: false,
       secrets: [
         orgs.newRepoSecret('GH_ACTION_TOKEN') {
@@ -352,8 +320,6 @@ orgs.newOrg('eclipse-cdt-cloud') {
     orgs.newRepo('website-publish') {
       allow_update_branch: false,
       description: "The acutal published webiste content",
-      secret_scanning: "disabled",
-      secret_scanning_push_protection: "disabled",
       web_commit_signoff_required: false,
     },
   ],
