@@ -1,5 +1,10 @@
 local orgs = import 'vendor/otterdog-defaults/otterdog-defaults.libsonnet';
 
+local custom_branch_protection_rule(pattern) = 
+  orgs.newBranchProtectionRule(pattern) {
+    required_approving_review_count: 0,
+  };
+
 orgs.newOrg('eclipse-cdt-cloud') {
   settings+: {
     default_repository_permission: "none",
@@ -27,6 +32,9 @@ orgs.newOrg('eclipse-cdt-cloud') {
     orgs.newRepo('cdt-amalgamator') {
       allow_update_branch: false,
       web_commit_signoff_required: false,
+      branch_protection_rules: [
+        custom_branch_protection_rule('main'),
+      ],
     },
     orgs.newRepo('cdt-cloud') {
       allow_update_branch: false,
@@ -65,12 +73,7 @@ orgs.newOrg('eclipse-cdt-cloud') {
       ],
       web_commit_signoff_required: false,
       branch_protection_rules: [
-        orgs.newBranchProtectionRule('main') {
-          required_approving_review_count: null,
-          requires_pull_request: false,
-          requires_status_checks: false,
-          requires_strict_status_checks: true,
-        },
+        custom_branch_protection_rule('main'),
       ],
     },
     orgs.newRepo('cdt-gdb-vscode') {
@@ -85,12 +88,7 @@ orgs.newOrg('eclipse-cdt-cloud') {
       ],
       web_commit_signoff_required: false,
       branch_protection_rules: [
-        orgs.newBranchProtectionRule('main') {
-          required_approving_review_count: null,
-          requires_pull_request: false,
-          requires_status_checks: false,
-          requires_strict_status_checks: true,
-        },
+        custom_branch_protection_rule('main'),
       ],
     },
     orgs.newRepo('clangd-contexts') {
