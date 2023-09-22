@@ -30,6 +30,7 @@ orgs.newOrg('eclipse-cdt-cloud') {
   ],
   _repositories+:: [
     orgs.newRepo('cdt-amalgamator') {
+      allow_merge_commit: false,
       allow_update_branch: false,
       web_commit_signoff_required: false,
       branch_protection_rules: [
@@ -62,6 +63,7 @@ orgs.newOrg('eclipse-cdt-cloud') {
       web_commit_signoff_required: false,
     },
     orgs.newRepo('cdt-gdb-adapter') {
+      allow_merge_commit: false,
       allow_update_branch: false,
       dependabot_security_updates_enabled: true,
       description: "CDT GDB Debug Adapter",
@@ -77,6 +79,7 @@ orgs.newOrg('eclipse-cdt-cloud') {
       ],
     },
     orgs.newRepo('cdt-gdb-vscode') {
+      allow_merge_commit: false,
       allow_update_branch: false,
       dependabot_security_updates_enabled: true,
       description: "CDT GDB Visual Studio Code Extension",
