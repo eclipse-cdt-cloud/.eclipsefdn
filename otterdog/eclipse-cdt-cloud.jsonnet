@@ -30,15 +30,17 @@ orgs.newOrg('eclipse-cdt-cloud') {
   ],
   _repositories+:: [
     orgs.newRepo('cdt-amalgamator') {
-      allow_merge_commit: false,
       allow_update_branch: false,
+      delete_branch_on_merge: false,
       web_commit_signoff_required: false,
       branch_protection_rules: [
         custom_branch_protection_rule('main'),
       ],
     },
     orgs.newRepo('cdt-cloud') {
+      allow_merge_commit: true,
       allow_update_branch: false,
+      delete_branch_on_merge: false,
       description: "Components for web-based C/C++ tools",
       has_discussions: true,
       homepage: "https://www.eclipse.org/cdt-cloud",
@@ -56,15 +58,17 @@ orgs.newOrg('eclipse-cdt-cloud') {
       web_commit_signoff_required: false,
     },
     orgs.newRepo('cdt-cloud-blueprint') {
+      allow_merge_commit: true,
       allow_update_branch: false,
       default_branch: "master",
+      delete_branch_on_merge: false,
       description: "CDT Cloud Blueprint is a template for building custom web-based C/C++ tools. It is made up of existing open source components and can be easily downloaded and installed on all major operating system platforms.",
       homepage: "",
       web_commit_signoff_required: false,
     },
     orgs.newRepo('cdt-gdb-adapter') {
-      allow_merge_commit: false,
       allow_update_branch: false,
+      delete_branch_on_merge: false,
       dependabot_security_updates_enabled: true,
       description: "CDT GDB Debug Adapter",
       homepage: "",
@@ -79,8 +83,8 @@ orgs.newOrg('eclipse-cdt-cloud') {
       ],
     },
     orgs.newRepo('cdt-gdb-vscode') {
-      allow_merge_commit: false,
       allow_update_branch: false,
+      delete_branch_on_merge: false,
       dependabot_security_updates_enabled: true,
       description: "CDT GDB Visual Studio Code Extension",
       homepage: "",
@@ -95,7 +99,9 @@ orgs.newOrg('eclipse-cdt-cloud') {
       ],
     },
     orgs.newRepo('clangd-contexts') {
+      allow_merge_commit: true,
       allow_update_branch: false,
+      delete_branch_on_merge: false,
       description: "API for management of clangd configuration files in C/C++ projects using contexts.",
       has_wiki: false,
       homepage: "",
@@ -113,8 +119,10 @@ orgs.newOrg('eclipse-cdt-cloud') {
       ],
     },
     orgs.newRepo('theia-trace-extension') {
+      allow_merge_commit: true,
       allow_update_branch: false,
       default_branch: "master",
+      delete_branch_on_merge: false,
       dependabot_security_updates_enabled: true,
       description: "Theia trace viewer extension using the tsp-typescript-client (https://github.com/theia-ide/tsp-typescript-client) and Trace Server Protocol (https://github.com/theia-ide/trace-server-protocol).",
       homepage: "",
@@ -150,8 +158,10 @@ orgs.newOrg('eclipse-cdt-cloud') {
       ],
     },
     orgs.newRepo('timeline-chart') {
+      allow_merge_commit: true,
       allow_update_branch: false,
       default_branch: "master",
+      delete_branch_on_merge: false,
       dependabot_security_updates_enabled: true,
       description: "A timeline / gantt chart library for large data (e.g. traces)",
       web_commit_signoff_required: false,
@@ -184,8 +194,10 @@ orgs.newOrg('eclipse-cdt-cloud') {
       ],
     },
     orgs.newRepo('trace-server-protocol') {
+      allow_merge_commit: true,
       allow_update_branch: false,
       default_branch: "master",
+      delete_branch_on_merge: false,
       dependabot_security_updates_enabled: true,
       description: "Specification of the Trace Server Protocol",
       gh_pages_build_type: "legacy",
@@ -206,8 +218,10 @@ orgs.newOrg('eclipse-cdt-cloud') {
       ],
     },
     orgs.newRepo('tsp-python-client') {
+      allow_merge_commit: true,
       allow_update_branch: false,
       default_branch: "master",
+      delete_branch_on_merge: false,
       dependabot_security_updates_enabled: true,
       description: "Client-side implementation, in Python, of the Trace Server Protocol (TSP) (https://github.com/theia-ide/trace-server-protocol)",
       web_commit_signoff_required: false,
@@ -221,8 +235,10 @@ orgs.newOrg('eclipse-cdt-cloud') {
       ],
     },
     orgs.newRepo('tsp-typescript-client') {
+      allow_merge_commit: true,
       allow_update_branch: false,
       default_branch: "master",
+      delete_branch_on_merge: false,
       dependabot_security_updates_enabled: true,
       description: "Client-side implementation, in typescript, of the Trace Server Protocol (https://github.com/theia-ide/trace-server-protocol).",
       homepage: "",
@@ -256,13 +272,17 @@ orgs.newOrg('eclipse-cdt-cloud') {
       ],
     },
     orgs.newRepo('vscode-memory-inspector') {
+      allow_merge_commit: true,
       allow_update_branch: false,
+      delete_branch_on_merge: false,
       description: "vscode memory inspector",
       web_commit_signoff_required: false,
     },
     orgs.newRepo('vscode-trace-extension') {
+      allow_merge_commit: true,
       allow_update_branch: false,
       default_branch: "master",
+      delete_branch_on_merge: false,
       dependabot_security_updates_enabled: true,
       description: "Trace viewer extension for Theia applications and VSCode compatible applications",
       has_discussions: true,
@@ -288,7 +308,9 @@ orgs.newOrg('eclipse-cdt-cloud') {
       ],
     },
     orgs.newRepo('vscode-trace-server') {
+      allow_merge_commit: true,
       allow_update_branch: false,
+      delete_branch_on_merge: false,
       description: "Extension to start and stop a trace server used by the vscode-trace-extension. This extension can run in Theia and VSCode compatible applications",
       homepage: "",
       topics+: [
@@ -304,13 +326,17 @@ orgs.newOrg('eclipse-cdt-cloud') {
       web_commit_signoff_required: false,
     },
     orgs.newRepo('vscode-websocket-adapter') {
+      allow_merge_commit: true,
       allow_update_branch: false,
+      delete_branch_on_merge: false,
       has_wiki: false,
       homepage: "https://open-vsx.org/extension/eclipse-cdt/websocket-adapter",
       web_commit_signoff_required: false,
     },
     orgs.newRepo('website') {
+      allow_merge_commit: true,
       allow_update_branch: false,
+      delete_branch_on_merge: false,
       web_commit_signoff_required: false,
       secrets: [
         orgs.newRepoSecret('GH_ACTION_TOKEN') {
@@ -319,7 +345,9 @@ orgs.newOrg('eclipse-cdt-cloud') {
       ],
     },
     orgs.newRepo('website-publish') {
+      allow_merge_commit: true,
       allow_update_branch: false,
+      delete_branch_on_merge: false,
       description: "The acutal published webiste content",
       web_commit_signoff_required: false,
     },
