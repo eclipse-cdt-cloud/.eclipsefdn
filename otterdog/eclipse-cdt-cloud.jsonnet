@@ -278,6 +278,13 @@ orgs.newOrg('eclipse-cdt-cloud') {
       description: "vscode memory inspector",
       web_commit_signoff_required: false,
     },
+    orgs.newRepo('vscode-svd-viewer') {
+      allow_merge_commit: true,
+      allow_update_branch: false,
+      delete_branch_on_merge: false,
+      description: "vscode memory inspector",
+      web_commit_signoff_required: false,
+    },
     orgs.newRepo('vscode-trace-extension') {
       allow_merge_commit: true,
       allow_update_branch: false,
