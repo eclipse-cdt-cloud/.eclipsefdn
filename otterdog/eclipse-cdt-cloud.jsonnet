@@ -7,7 +7,6 @@ local custom_branch_protection_rule(pattern) =
 
 orgs.newOrg('eclipse-cdt-cloud') {
   settings+: {
-    default_repository_permission: "none",
     dependabot_security_updates_enabled_for_new_repositories: false,
     description: "",
     name: "Eclipse CDT Cloud",
@@ -33,6 +32,9 @@ orgs.newOrg('eclipse-cdt-cloud') {
       allow_update_branch: false,
       delete_branch_on_merge: false,
       web_commit_signoff_required: false,
+      workflows+: {
+        default_workflow_permissions: "write",
+      },
       branch_protection_rules: [
         custom_branch_protection_rule('main'),
       ],
@@ -56,6 +58,9 @@ orgs.newOrg('eclipse-cdt-cloud') {
         "vscode"
       ],
       web_commit_signoff_required: false,
+      workflows+: {
+        default_workflow_permissions: "write",
+      },
     },
     orgs.newRepo('cdt-cloud-blueprint') {
       allow_merge_commit: true,
@@ -65,6 +70,9 @@ orgs.newOrg('eclipse-cdt-cloud') {
       description: "CDT Cloud Blueprint is a template for building custom web-based C/C++ tools. It is made up of existing open source components and can be easily downloaded and installed on all major operating system platforms.",
       homepage: "",
       web_commit_signoff_required: false,
+      workflows+: {
+        default_workflow_permissions: "write",
+      },
     },
     orgs.newRepo('cdt-gdb-adapter') {
       allow_update_branch: false,
@@ -78,6 +86,9 @@ orgs.newOrg('eclipse-cdt-cloud') {
         "gdb"
       ],
       web_commit_signoff_required: false,
+      workflows+: {
+        default_workflow_permissions: "write",
+      },
       branch_protection_rules: [
         custom_branch_protection_rule('main'),
       ],
@@ -94,6 +105,9 @@ orgs.newOrg('eclipse-cdt-cloud') {
         "visual-studio-code-extension"
       ],
       web_commit_signoff_required: false,
+      workflows+: {
+        default_workflow_permissions: "write",
+      },
       branch_protection_rules: [
         custom_branch_protection_rule('main'),
       ],
@@ -112,6 +126,9 @@ orgs.newOrg('eclipse-cdt-cloud') {
         "vscode-extension"
       ],
       web_commit_signoff_required: false,
+      workflows+: {
+        default_workflow_permissions: "write",
+      },
       secrets: [
         orgs.newRepoSecret('NPM_AUTH_TOKEN') {
           value: "pass:bots/ecd.cdt-cloud/npmjs.com/token",
@@ -134,6 +151,9 @@ orgs.newOrg('eclipse-cdt-cloud') {
         "tsp"
       ],
       web_commit_signoff_required: false,
+      workflows+: {
+        default_workflow_permissions: "write",
+      },
       webhooks: [
         orgs.newRepoWebhook('https://discordapp.com/api/webhooks/732801241565888642/k8i2zzlYPFJjgMBKXM-zm4gMPdpWQln3RDvJ6jcUugNUbgRZyOVXEe0FTVCPFQeSjAGW/github') {
           content_type: "json",
@@ -165,6 +185,9 @@ orgs.newOrg('eclipse-cdt-cloud') {
       dependabot_security_updates_enabled: true,
       description: "A timeline / gantt chart library for large data (e.g. traces)",
       web_commit_signoff_required: false,
+      workflows+: {
+        default_workflow_permissions: "write",
+      },
       webhooks: [
         orgs.newRepoWebhook('https://notify.travis-ci.org') {
           events+: [
@@ -205,6 +228,9 @@ orgs.newOrg('eclipse-cdt-cloud') {
       gh_pages_source_path: "/",
       homepage: "https://eclipse-cdt-cloud.github.io/trace-server-protocol/",
       web_commit_signoff_required: false,
+      workflows+: {
+        default_workflow_permissions: "write",
+      },
       branch_protection_rules: [
         orgs.newBranchProtectionRule('master') {
           is_admin_enforced: true,
@@ -225,6 +251,9 @@ orgs.newOrg('eclipse-cdt-cloud') {
       dependabot_security_updates_enabled: true,
       description: "Client-side implementation, in Python, of the Trace Server Protocol (TSP) (https://github.com/theia-ide/trace-server-protocol)",
       web_commit_signoff_required: false,
+      workflows+: {
+        default_workflow_permissions: "write",
+      },
       branch_protection_rules: [
         orgs.newBranchProtectionRule('master') {
           is_admin_enforced: true,
@@ -243,6 +272,9 @@ orgs.newOrg('eclipse-cdt-cloud') {
       description: "Client-side implementation, in typescript, of the Trace Server Protocol (https://github.com/theia-ide/trace-server-protocol).",
       homepage: "",
       web_commit_signoff_required: false,
+      workflows+: {
+        default_workflow_permissions: "write",
+      },
       webhooks: [
         orgs.newRepoWebhook('https://notify.travis-ci.org') {
           events+: [
@@ -277,6 +309,9 @@ orgs.newOrg('eclipse-cdt-cloud') {
       delete_branch_on_merge: false,
       description: "vscode memory inspector",
       web_commit_signoff_required: false,
+      workflows+: {
+        default_workflow_permissions: "write",
+      },
     },
     orgs.newRepo('vscode-svd-viewer') {
       allow_merge_commit: true,
@@ -284,6 +319,9 @@ orgs.newOrg('eclipse-cdt-cloud') {
       delete_branch_on_merge: false,
       description: "vscode memory inspector",
       web_commit_signoff_required: false,
+      workflows+: {
+        default_workflow_permissions: "write",
+      },
     },
     orgs.newRepo('vscode-trace-extension') {
       allow_merge_commit: true,
@@ -305,6 +343,9 @@ orgs.newOrg('eclipse-cdt-cloud') {
         "vscode-extension"
       ],
       web_commit_signoff_required: false,
+      workflows+: {
+        default_workflow_permissions: "write",
+      },
       branch_protection_rules: [
         orgs.newBranchProtectionRule('master') {
           is_admin_enforced: true,
@@ -331,6 +372,9 @@ orgs.newOrg('eclipse-cdt-cloud') {
         "vscode-extension"
       ],
       web_commit_signoff_required: false,
+      workflows+: {
+        default_workflow_permissions: "write",
+      },
     },
     orgs.newRepo('vscode-websocket-adapter') {
       allow_merge_commit: true,
@@ -339,12 +383,18 @@ orgs.newOrg('eclipse-cdt-cloud') {
       has_wiki: false,
       homepage: "https://open-vsx.org/extension/eclipse-cdt/websocket-adapter",
       web_commit_signoff_required: false,
+      workflows+: {
+        default_workflow_permissions: "write",
+      },
     },
     orgs.newRepo('website') {
       allow_merge_commit: true,
       allow_update_branch: false,
       delete_branch_on_merge: false,
       web_commit_signoff_required: false,
+      workflows+: {
+        default_workflow_permissions: "write",
+      },
       secrets: [
         orgs.newRepoSecret('GH_ACTION_TOKEN') {
           value: "pass:bots/ecd.cdt-cloud/github.com/api-token",
@@ -357,6 +407,9 @@ orgs.newOrg('eclipse-cdt-cloud') {
       delete_branch_on_merge: false,
       description: "The acutal published webiste content",
       web_commit_signoff_required: false,
+      workflows+: {
+        default_workflow_permissions: "write",
+      },
     },
   ],
 }
