@@ -313,8 +313,8 @@ orgs.newOrg('eclipse-cdt-cloud') {
         default_workflow_permissions: "write",
       },
     },
-    orgs.newRepo('vscode-svd-viewer') {
-      aliases: ['vscode-peripheral-inspector'],
+    orgs.newRepo('vscode-peripheral-inspector') {
+      aliases: ['vscode-svd-viewer'],
       allow_merge_commit: true,
       allow_update_branch: false,
       delete_branch_on_merge: false,
