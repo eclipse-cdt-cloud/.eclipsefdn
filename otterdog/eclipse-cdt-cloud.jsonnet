@@ -314,6 +314,7 @@ orgs.newOrg('eclipse-cdt-cloud') {
       },
     },
     orgs.newRepo('vscode-svd-viewer') {
+      aliases: ['vscode-peripheral-inspector'],
       allow_merge_commit: true,
       allow_update_branch: false,
       delete_branch_on_merge: false,
