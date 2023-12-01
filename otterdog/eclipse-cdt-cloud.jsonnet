@@ -306,8 +306,9 @@ orgs.newOrg('eclipse-cdt-cloud') {
     orgs.newRepo('vscode-memory-inspector') {
       allow_merge_commit: true,
       allow_update_branch: false,
-      delete_branch_on_merge: false,
+      delete_branch_on_merge: true,
       description: "vscode memory inspector",
+      homepage: "https://open-vsx.org/extension/eclipse-cdt/memory-inspector",
       web_commit_signoff_required: false,
       workflows+: {
         default_workflow_permissions: "write",
@@ -317,8 +318,9 @@ orgs.newOrg('eclipse-cdt-cloud') {
       aliases: ['vscode-svd-viewer'],
       allow_merge_commit: true,
       allow_update_branch: false,
-      delete_branch_on_merge: false,
-      description: "vscode memory inspector",
+      delete_branch_on_merge: true,
+      description: "vscode peripheral inspector",
+      homepage: "https://open-vsx.org/extension/eclipse-cdt/peripheral-inspector",
       web_commit_signoff_required: false,
       workflows+: {
         default_workflow_permissions: "write",
@@ -380,7 +382,8 @@ orgs.newOrg('eclipse-cdt-cloud') {
     orgs.newRepo('vscode-websocket-adapter') {
       allow_merge_commit: true,
       allow_update_branch: false,
-      delete_branch_on_merge: false,
+      delete_branch_on_merge: true,
+      description: "vscode websocket adapter",
       has_wiki: false,
       homepage: "https://open-vsx.org/extension/eclipse-cdt/websocket-adapter",
       web_commit_signoff_required: false,
