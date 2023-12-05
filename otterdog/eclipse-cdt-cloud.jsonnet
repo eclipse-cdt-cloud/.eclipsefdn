@@ -306,6 +306,7 @@ orgs.newOrg('eclipse-cdt-cloud') {
     orgs.newRepo('vscode-clangd') {
       allow_merge_commit: true,
       allow_update_branch: false,
+      default_branch: "master",
       delete_branch_on_merge: true,
       forked_repository: "clangd/vscode-clangd",
       web_commit_signoff_required: false,
