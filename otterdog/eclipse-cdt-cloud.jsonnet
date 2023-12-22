@@ -307,6 +307,12 @@ orgs.newOrg('eclipse-cdt-cloud') {
       allow_merge_commit: true,
       allow_update_branch: false,
       default_branch: "main",
+      description: "Fork of the VS Code extension for clangd with added support for multiple projects",
+      homepage: "https://eclipse.dev/cdt-cloud",
+      topics: [
+        "clangd", 
+        "vscode-extension",
+      ],
       delete_branch_on_merge: true,
       forked_repository: "clangd/vscode-clangd",
       web_commit_signoff_required: false,
