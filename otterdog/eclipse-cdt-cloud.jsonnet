@@ -306,10 +306,18 @@ orgs.newOrg('eclipse-cdt-cloud') {
     orgs.newRepo('vscode-clangd') {
       allow_merge_commit: true,
       allow_update_branch: false,
-      default_branch: "master",
+      default_branch: "main",
       delete_branch_on_merge: true,
       forked_repository: "clangd/vscode-clangd",
       web_commit_signoff_required: false,
+      branch_protection_rules: [
+        orgs.newBranchProtectionRule('main') {
+          is_admin_enforced: true,
+          required_approving_review_count: 1,
+          requires_status_checks: false,
+          requires_strict_status_checks: true,
+        },
+      ],
     },
     orgs.newRepo('vscode-memory-inspector') {
       allow_merge_commit: true,
