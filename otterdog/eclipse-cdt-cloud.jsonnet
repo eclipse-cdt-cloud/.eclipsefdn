@@ -413,6 +413,17 @@ orgs.newOrg('eclipse-cdt-cloud') {
         default_workflow_permissions: "write",
       },
     },
+    orgs.newRepo('vscode-serial-monitor') {
+      allow_merge_commit: true,
+      allow_update_branch: false,
+      delete_branch_on_merge: true,
+      description: "vscode serial monitor",
+      homepage: "https://open-vsx.org/extension/eclipse-cdt/serial-monitor",
+      web_commit_signoff_required: false,
+      workflows+: {
+        default_workflow_permissions: "write",
+      },
+    },
     orgs.newRepo('website') {
       allow_merge_commit: true,
       allow_update_branch: false,
