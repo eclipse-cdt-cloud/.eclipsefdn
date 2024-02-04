@@ -421,7 +421,7 @@ orgs.newOrg('eclipse-cdt-cloud') {
       homepage: "https://open-vsx.org/extension/eclipse-cdt/serial-monitor",
       web_commit_signoff_required: false,
       workflows+: {
-        default_workflow_permissions: "write",
+        default_workflow_permissions: "read",
       },
     },
     orgs.newRepo('website') {
