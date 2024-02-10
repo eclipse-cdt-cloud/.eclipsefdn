@@ -333,7 +333,7 @@ orgs.newOrg('eclipse-cdt-cloud') {
       homepage: "https://open-vsx.org/extension/eclipse-cdt/memory-inspector",
       web_commit_signoff_required: false,
       workflows+: {
-        default_workflow_permissions: "write",
+        default_workflow_permissions: "read",
       },
     },
     orgs.newRepo('vscode-peripheral-inspector') {
@@ -345,7 +345,7 @@ orgs.newOrg('eclipse-cdt-cloud') {
       homepage: "https://open-vsx.org/extension/eclipse-cdt/peripheral-inspector",
       web_commit_signoff_required: false,
       workflows+: {
-        default_workflow_permissions: "write",
+        default_workflow_permissions: "read",
       },
     },
     orgs.newRepo('vscode-trace-extension') {
@@ -410,7 +410,7 @@ orgs.newOrg('eclipse-cdt-cloud') {
       homepage: "https://open-vsx.org/extension/eclipse-cdt/websocket-adapter",
       web_commit_signoff_required: false,
       workflows+: {
-        default_workflow_permissions: "write",
+        default_workflow_permissions: "read",
       },
     },
     orgs.newRepo('vscode-serial-monitor') {
