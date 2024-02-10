@@ -10,8 +10,6 @@ orgs.newOrg('eclipse-cdt-cloud') {
     dependabot_security_updates_enabled_for_new_repositories: false,
     description: "",
     name: "Eclipse CDT Cloud",
-    packages_containers_internal: false,
-    packages_containers_public: false,
     readers_can_create_discussions: true,
     two_factor_requirement: false,
     web_commit_signoff_required: false,
@@ -379,6 +377,11 @@ orgs.newOrg('eclipse-cdt-cloud') {
           requires_strict_status_checks: true,
         },
       ],
+      secrets: [
+        orgs.newRepoSecret('GH_COMMITTER_TOKEN') {
+          value: "********",
+        },
+      ],      
     },
     orgs.newRepo('vscode-trace-server') {
       allow_merge_commit: true,
@@ -400,6 +403,11 @@ orgs.newOrg('eclipse-cdt-cloud') {
       workflows+: {
         default_workflow_permissions: "write",
       },
+      secrets: [
+        orgs.newRepoSecret('GH_COMMITTER_TOKEN') {
+          value: "********",
+        },
+      ],            
     },
     orgs.newRepo('vscode-websocket-adapter') {
       allow_merge_commit: true,
