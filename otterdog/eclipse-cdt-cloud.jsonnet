@@ -10,7 +10,6 @@ orgs.newOrg('eclipse-cdt-cloud') {
     dependabot_security_updates_enabled_for_new_repositories: false,
     description: "",
     name: "Eclipse CDT Cloud",
-    readers_can_create_discussions: true,
     two_factor_requirement: false,
     web_commit_signoff_required: false,
     workflows+: {
