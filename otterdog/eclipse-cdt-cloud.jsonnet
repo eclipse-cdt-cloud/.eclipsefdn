@@ -159,6 +159,9 @@ orgs.newOrg('eclipse-cdt-cloud') {
         },
       ],
       secrets: [
+        orgs.newRepoSecret('GH_COMMITTER_TOKEN') {
+          value: "********",
+        },      
         orgs.newRepoSecret('NPM_AUTH_TOKEN') {
           value: "pass:bots/ecd.cdt-cloud/npmjs.com/token",
         },
@@ -289,6 +292,9 @@ orgs.newOrg('eclipse-cdt-cloud') {
         },
       ],
       secrets: [
+        orgs.newRepoSecret('GH_COMMITTER_TOKEN') {
+          value: "********",
+        },
         orgs.newRepoSecret('NPM_AUTH_TOKEN') {
           value: "pass:bots/ecd.cdt-cloud/npmjs.com/token",
         },
