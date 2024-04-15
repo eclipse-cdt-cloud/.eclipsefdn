@@ -5,6 +5,15 @@ local custom_branch_protection_rule(pattern) =
     required_approving_review_count: 0,
   };
 
+// for trace-related repos
+local custom_branch_protection_rule_trace(pattern) = 
+  orgs.newBranchProtectionRule(pattern) {
+    dismisses_stale_reviews: true,
+    is_admin_enforced: true,
+    required_approving_review_count: 1,
+    requires_status_checks: false
+  };
+
 orgs.newOrg('eclipse-cdt-cloud') {
   settings+: {
     dependabot_security_updates_enabled_for_new_repositories: false,
@@ -132,32 +141,35 @@ orgs.newOrg('eclipse-cdt-cloud') {
       ],
     },
     orgs.newRepo('theia-trace-extension') {
-      allow_merge_commit: true,
+      allow_merge_commit: false,
       allow_update_branch: false,
       default_branch: "master",
       delete_branch_on_merge: false,
       dependabot_security_updates_enabled: true,
-      description: "Theia trace viewer extension using the tsp-typescript-client (https://github.com/theia-ide/tsp-typescript-client) and Trace Server Protocol (https://github.com/theia-ide/trace-server-protocol).",
+      description: "Eclipse Theia trace viewer extension using the Trace Server Protocol (TSP), through the tsp-typescript-client. Also the home for reusable JavaScript libraries: traceviewer-base, traceviewer-react-components",
       homepage: "",
       topics+: [
+        "theia-traceviewer",
+        "tsp-typescript-client",
+        "tsp",
+        "traceviewer-base",
+        "traceviewer-react-components",
+        "timeline-chart",
         "theia-extension",
         "trace",
         "trace-viewer",
         "trace-visualization",
-        "tsp"
+        "javascript",
+        "typescript",
+        "npm",
+        "eclipse-theia",
+        "eclipse",
+        "eclipse-foundation"
       ],
       web_commit_signoff_required: false,
       workflows+: {
         default_workflow_permissions: "write",
       },
-      webhooks: [
-        orgs.newRepoWebhook('https://discordapp.com/api/webhooks/732801241565888642/k8i2zzlYPFJjgMBKXM-zm4gMPdpWQln3RDvJ6jcUugNUbgRZyOVXEe0FTVCPFQeSjAGW/github') {
-          content_type: "json",
-          events+: [
-            "push"
-          ],
-        },
-      ],
       secrets: [
         orgs.newRepoSecret('GH_COMMITTER_TOKEN') {
           value: "********",
@@ -167,40 +179,30 @@ orgs.newOrg('eclipse-cdt-cloud') {
         },
       ],
       branch_protection_rules: [
-        orgs.newBranchProtectionRule('master') {
-          dismisses_stale_reviews: true,
-          is_admin_enforced: true,
-          required_approving_review_count: 1,
-          requires_status_checks: false,
-          requires_strict_status_checks: true,
-        },
+        custom_branch_protection_rule_trace('master'),
       ],
     },
     orgs.newRepo('timeline-chart') {
-      allow_merge_commit: true,
+      allow_merge_commit: false,
       allow_update_branch: false,
       default_branch: "master",
       delete_branch_on_merge: false,
       dependabot_security_updates_enabled: true,
       description: "A timeline / gantt chart library for large data (e.g. traces)",
+      topics+: [
+        "timeline-chart",
+        "trace",
+        "trace-visualization",
+        "javascript",
+        "typescript",
+        "npm",
+        "eclipse",
+        "eclipse-foundation"
+      ],
       web_commit_signoff_required: false,
       workflows+: {
         default_workflow_permissions: "write",
       },
-      webhooks: [
-        orgs.newRepoWebhook('https://notify.travis-ci.org') {
-          events+: [
-            "create",
-            "delete",
-            "issue_comment",
-            "member",
-            "public",
-            "pull_request",
-            "push",
-            "repository"
-          ],
-        },
-      ],
       secrets: [
         orgs.newRepoSecret('GH_COMMITTER_TOKEN') {
           value: "********",
@@ -210,21 +212,24 @@ orgs.newOrg('eclipse-cdt-cloud') {
         },
       ],
       branch_protection_rules: [
-        orgs.newBranchProtectionRule('master') {
-          is_admin_enforced: true,
-          required_approving_review_count: 1,
-          requires_status_checks: false,
-          requires_strict_status_checks: true,
-        },
+        custom_branch_protection_rule_trace('master'),
       ],
     },
     orgs.newRepo('trace-server-protocol') {
-      allow_merge_commit: true,
+      allow_merge_commit: false,
       allow_update_branch: false,
       default_branch: "master",
       delete_branch_on_merge: false,
       dependabot_security_updates_enabled: true,
-      description: "Specification of the Trace Server Protocol",
+      description: "Specification of the Trace Server Protocol (TSP)",
+      topics+: [
+        "trace-server-protocol",
+        "tsp",
+        "trace",
+        "trace-visualization",
+        "eclipse",
+        "eclipse-foundation"
+      ],
       gh_pages_build_type: "legacy",
       gh_pages_source_branch: "gh-pages",
       gh_pages_source_path: "/",
@@ -234,63 +239,61 @@ orgs.newOrg('eclipse-cdt-cloud') {
         default_workflow_permissions: "write",
       },
       branch_protection_rules: [
-        orgs.newBranchProtectionRule('master') {
-          is_admin_enforced: true,
-          required_approving_review_count: 1,
-          requires_status_checks: false,
-          requires_strict_status_checks: true,
-        },
+        custom_branch_protection_rule_trace('master'),
       ],
       environments: [
         orgs.newEnvironment('github-pages'),
       ],
     },
     orgs.newRepo('tsp-python-client') {
-      allow_merge_commit: true,
+      allow_merge_commit: false,
       allow_update_branch: false,
       default_branch: "master",
       delete_branch_on_merge: false,
       dependabot_security_updates_enabled: true,
-      description: "Client-side implementation, in Python, of the Trace Server Protocol (TSP) (https://github.com/theia-ide/trace-server-protocol)",
+      description: "Client-side implementation, in Python, of the Trace Server Protocol (TSP)",
+      topics+: [
+        "tsp-python-client",
+        "trace-server-protocol",
+        "tsp",
+        "trace",
+        "trace-visualization",
+        "python",
+        "eclipse",
+        "eclipse-foundation"
+      ],
       web_commit_signoff_required: false,
       workflows+: {
         default_workflow_permissions: "write",
       },
       branch_protection_rules: [
-        orgs.newBranchProtectionRule('master') {
-          is_admin_enforced: true,
-          required_approving_review_count: 1,
-          requires_status_checks: false,
-          requires_strict_status_checks: true,
-        },
+        custom_branch_protection_rule_trace('master'),
       ],
     },
     orgs.newRepo('tsp-typescript-client') {
-      allow_merge_commit: true,
+      allow_merge_commit: false,
       allow_update_branch: false,
       default_branch: "master",
       delete_branch_on_merge: false,
       dependabot_security_updates_enabled: true,
-      description: "Client-side implementation, in typescript, of the Trace Server Protocol (https://github.com/theia-ide/trace-server-protocol).",
+      description: "Client-side implementation, in typescript, of the Trace Server Protocol (TSP)",
+      topics+: [
+        "tsp-typescript-client",
+        "trace-server-protocol",
+        "tsp",
+        "trace",
+        "trace-visualization",
+        "javascript",
+        "typescript",
+        "npm",
+        "eclipse",
+        "eclipse-foundation"
+      ],
       homepage: "",
       web_commit_signoff_required: false,
       workflows+: {
         default_workflow_permissions: "write",
       },
-      webhooks: [
-        orgs.newRepoWebhook('https://notify.travis-ci.org') {
-          events+: [
-            "create",
-            "delete",
-            "issue_comment",
-            "member",
-            "public",
-            "pull_request",
-            "push",
-            "repository"
-          ],
-        },
-      ],
       secrets: [
         orgs.newRepoSecret('GH_COMMITTER_TOKEN') {
           value: "********",
@@ -300,12 +303,7 @@ orgs.newOrg('eclipse-cdt-cloud') {
         },
       ],
       branch_protection_rules: [
-        orgs.newBranchProtectionRule('master') {
-          is_admin_enforced: true,
-          required_approving_review_count: 1,
-          requires_status_checks: false,
-          requires_strict_status_checks: true,
-        },
+        custom_branch_protection_rule_trace('master'),
       ],
     },
     orgs.newRepo('vscode-clangd') {
@@ -354,35 +352,41 @@ orgs.newOrg('eclipse-cdt-cloud') {
       },
     },
     orgs.newRepo('vscode-trace-extension') {
-      allow_merge_commit: true,
+      allow_merge_commit: false,
       allow_update_branch: false,
       default_branch: "master",
       delete_branch_on_merge: false,
       dependabot_security_updates_enabled: true,
-      description: "Trace viewer extension for Theia applications and VSCode compatible applications",
+      description: "Trace viewer extension for Eclipse Theia applications and VSCode compatible applications, that uses the Trace Server Protocol (TSP)",
       has_discussions: true,
       homepage: "",
       topics+: [
-        "theia",
+        "vscode-trace-extension",
+        "trace-server-protocol",
+        "tsp",
         "trace",
         "trace-viewer",
         "trace-visualization",
-        "tsp",
-        "typescript",
+        "vscode-extension",
         "vscode",
-        "vscode-extension"
+        "eclipse-theia",
+        "traceviewer-base",
+        "traceviewer-react-components",
+        "timeline-chart",
+        "tsp-typescript-client",
+        "javascript",
+        "typescript",
+        "visual-studio-marketplace",
+        "open-vsx",
+        "eclipse",
+        "eclipse-foundation"
       ],
       web_commit_signoff_required: false,
       workflows+: {
         default_workflow_permissions: "write",
       },
       branch_protection_rules: [
-        orgs.newBranchProtectionRule('master') {
-          is_admin_enforced: true,
-          required_approving_review_count: 1,
-          requires_status_checks: false,
-          requires_strict_status_checks: true,
-        },
+        custom_branch_protection_rule_trace('master'),
       ],
       secrets: [
         orgs.newRepoSecret('GH_COMMITTER_TOKEN') {
@@ -391,25 +395,39 @@ orgs.newOrg('eclipse-cdt-cloud') {
       ],      
     },
     orgs.newRepo('vscode-trace-server') {
-      allow_merge_commit: true,
+      allow_merge_commit: false,
       allow_update_branch: false,
+      default_branch: "main",
       delete_branch_on_merge: false,
-      description: "Extension to start and stop a trace server used by the vscode-trace-extension. This extension can run in Theia and VSCode compatible applications",
+      dependabot_security_updates_enabled: true,
+      description: "Extension to start and stop a trace server used by the vscode-trace-extension. This extension can run in Eclipse Theia and VSCode compatible applications",
       homepage: "",
       topics+: [
-        "theia",
-        "trace",
-        "trace-viewer",
-        "trace-visualization",
+        "vscode-trace-server",
+        "trace-server",
+        "trace-compass",
         "tsp",
-        "typescript",
+        "trace-server-protocol",
+        "tsp-typescript-client",
+        "vscode-extension",
+        "trace-viewer",
+        "vscode-trace-extension",
         "vscode",
-        "vscode-extension"
+        "eclipse-theia",
+        "javascript",
+        "typescript",
+        "visual-studio-marketplace",
+        "open-vsx",
+        "eclipse",
+        "eclipse-foundation"
       ],
       web_commit_signoff_required: false,
       workflows+: {
         default_workflow_permissions: "write",
       },
+      branch_protection_rules: [
+        custom_branch_protection_rule_trace('main'),
+      ],
       secrets: [
         orgs.newRepoSecret('GH_COMMITTER_TOKEN') {
           value: "********",
