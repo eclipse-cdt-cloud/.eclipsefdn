@@ -16,7 +16,6 @@ local custom_branch_protection_rule_trace(pattern) =
 
 orgs.newOrg('eclipse-cdt-cloud') {
   settings+: {
-    dependabot_security_updates_enabled_for_new_repositories: false,
     description: "",
     name: "Eclipse CDT Cloud",
     web_commit_signoff_required: false,
