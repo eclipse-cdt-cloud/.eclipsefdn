@@ -340,8 +340,9 @@ orgs.newOrg('eclipse-cdt-cloud') {
     },
     orgs.newRepo('vscode-peripheral-inspector') {
       aliases: ['vscode-svd-viewer'],
-      allow_merge_commit: true,
-      allow_update_branch: false,
+      allow_merge_commit: false,
+      allow_rebase_merge: false,
+      allow_squash_merge: true,
       delete_branch_on_merge: true,
       description: "vscode peripheral inspector",
       homepage: "https://open-vsx.org/extension/eclipse-cdt/peripheral-inspector",
