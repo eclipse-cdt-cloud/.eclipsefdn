@@ -14,7 +14,7 @@ local custom_branch_protection_rule_trace(pattern) =
     requires_status_checks: false
   };
 
-orgs.newOrg('eclipse-cdt-cloud') {
+orgs.newOrg('ecd.cdt-cloud', 'eclipse-cdt-cloud') {
   settings+: {
     description: "",
     name: "Eclipse CDT Cloud",
