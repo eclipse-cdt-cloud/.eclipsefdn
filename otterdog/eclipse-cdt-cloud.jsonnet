@@ -457,6 +457,16 @@ orgs.newOrg('ecd.cdt-cloud', 'eclipse-cdt-cloud') {
         default_workflow_permissions: "read",
       },
     },
+    orgs.newRepo('vscode-ui-components') {
+      allow_merge_commit: true,
+      allow_update_branch: false,
+      delete_branch_on_merge: true,
+      description: "Shared UI Components for CDT Cloud VS Code extensions",
+      web_commit_signoff_required: false,
+      workflows+: {
+        default_workflow_permissions: "read",
+      },
+    },
     orgs.newRepo('website') {
       allow_merge_commit: true,
       allow_update_branch: false,
