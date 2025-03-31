@@ -466,6 +466,11 @@ orgs.newOrg('ecd.cdt-cloud', 'eclipse-cdt-cloud') {
       workflows+: {
         default_workflow_permissions: "read",
       },
+      secrets: [
+        orgs.newRepoSecret('NPM_AUTH_TOKEN') {
+          value: "pass:bots/ecd.cdt-cloud/npmjs.com/token",
+        },
+      ],
     },
     orgs.newRepo('website') {
       allow_merge_commit: true,
