@@ -96,6 +96,11 @@ orgs.newOrg('ecd.cdt-cloud', 'eclipse-cdt-cloud') {
       branch_protection_rules: [
         custom_branch_protection_rule('main'),
       ],
+      secrets: [
+        orgs.newRepoSecret('NPM_AUTH_TOKEN') {
+          value: "pass:bots/ecd.cdt-cloud/npmjs.com/token",
+        },
+      ],
     },
     orgs.newRepo('cdt-gdb-vscode') {
       allow_update_branch: false,
