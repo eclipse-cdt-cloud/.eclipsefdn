@@ -145,7 +145,7 @@ orgs.newOrg('ecd.cdt-cloud', 'eclipse-cdt-cloud') {
       ],
     },
     orgs.newRepo('theia-trace-extension') {
-      allow_merge_commit: false,
+      allow_merge_commit: true,
       allow_update_branch: false,
       default_branch: "master",
       delete_branch_on_merge: false,
@@ -357,7 +357,7 @@ orgs.newOrg('ecd.cdt-cloud', 'eclipse-cdt-cloud') {
       },
     },
     orgs.newRepo('vscode-trace-extension') {
-      allow_merge_commit: false,
+      allow_merge_commit: true,
       allow_update_branch: false,
       default_branch: "master",
       delete_branch_on_merge: false,
