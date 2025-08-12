@@ -534,6 +534,33 @@ orgs.newOrg('ecd.cdt-cloud', 'eclipse-cdt-cloud') {
         custom_branch_protection_rule_trace('master'),
       ],
     },
+    orgs.newRepo('traceviewer-libs') {
+      allow_merge_commit: true,
+      allow_update_branch: false,
+      default_branch: "master",
+      delete_branch_on_merge: false,
+      dependabot_security_updates_enabled: true,
+      description: "Trace viewer libraries: traceviewer-base and traceviewer-react-components",
+      homepage: "",
+      topics+: [
+        "trace-viewer",
+        "tsp-typescript-client",
+        "tsp",
+        "theia-extension",
+        "vscode-extension",
+        "trace",
+        "trace-visualization",
+        "eclipse",
+        "eclipse-foundation",
+      ],
+      web_commit_signoff_required: false,
+      workflows+: {
+        default_workflow_permissions: "read",
+      },
+      branch_protection_rules: [
+        custom_branch_protection_rule_trace('master'),
+      ],
+    },
   ],
 } + {
   # snippet added due to 'https://github.com/EclipseFdn/otterdog-configs/blob/main/blueprints/add-dot-github-repo.yml'
