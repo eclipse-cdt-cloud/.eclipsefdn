@@ -243,7 +243,7 @@ orgs.newOrg('ecd.cdt-cloud', 'eclipse-cdt-cloud') {
         default_workflow_permissions: "write",
       },
       branch_protection_rules: [
-        custom_branch_protection_rule_trace('main'),
+        custom_branch_protection_rule_trace('master'),
       ],
       environments: [
         orgs.newEnvironment('github-pages'),
