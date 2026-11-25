@@ -146,6 +146,7 @@ orgs.newOrg('ecd.cdt-cloud', 'eclipse-cdt-cloud') {
       ],
     },
     orgs.newRepo('theia-trace-extension') {
+      archived: true,
       allow_merge_commit: true,
       allow_update_branch: false,
       default_branch: "master",
@@ -536,6 +537,7 @@ orgs.newOrg('ecd.cdt-cloud', 'eclipse-cdt-cloud') {
       ],
     },
     orgs.newRepo('traceviewer-libs') {
+      archived: true,
       allow_merge_commit: true,
       allow_update_branch: false,
       default_branch: "master",
